@@ -3,6 +3,7 @@ sudo su // this let you login as root user
 adduser "yourUserName"
 type in the password you want
 2. Enable public key login
+if don't have a public key, run ssh-keygen first. 
 run ssh-copy-id "yourUserName"@IPAddress  on your local machine's terminal
 this will install your machine's public key to the VM
 if this is setup correctly, you won't need to type in password the next time you login
