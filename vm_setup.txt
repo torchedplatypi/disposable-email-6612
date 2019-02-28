@@ -1,0 +1,10 @@
+1. Create your user account 
+sudo su // this let you login as root user
+adduser "yourUserName:
+type in the password you want
+2. Enable public key login
+run ssh-copy-id "yourUserName:@IPAddress
+this will install your machine's public key to the VM
+if this is setup correctly, you won't need to type in password the next time you login
+3. After you created your own user account, 
+please run ssh "yourUserName"@IPaddress instead of ssh group-6612@IPAddress to login
