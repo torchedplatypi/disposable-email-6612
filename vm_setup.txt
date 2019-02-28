@@ -1,9 +1,9 @@
 1. Create your user account 
 sudo su // this let you login as root user
-adduser "yourUserName:
+adduser "yourUserName"
 type in the password you want
 2. Enable public key login
-run ssh-copy-id "yourUserName:@IPAddress
+run ssh-copy-id "yourUserName"@IPAddress
 this will install your machine's public key to the VM
 if this is setup correctly, you won't need to type in password the next time you login
 3. After you created your own user account, 
