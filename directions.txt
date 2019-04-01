@@ -1,0 +1,8 @@
+Directions on how to use email_parser script
+
+1. Takes a csv argument on the command line
+	ie  python email_parser.py [csv file]
+2. Setup: have the csv either in the same directory or full pathname
+3. Have a folder called training_data in the current working directory. This is where the separated emails will go.
+4. The script outputs four different types of data: 3 text files and a directory full of email text files. The other 3 text files contain sender, subject line, and body content that is updated each time the script is run.
+5. The directory will be in the training_data directory.
