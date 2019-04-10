@@ -78,7 +78,7 @@ for csv in filelist:
             body = line.replace(subjectline + ';',"") #parse for body content
             fsend.write(sentfrom + '\n')
             fsubj.write(subjectline + '\n')
-            fwords.write(body + '\n\n' )
+            fwords.write(body + '\n' )
             outfile.write(sentfrom + '\n')
             outfile.write(subjectline + '\n')
             outfile.write(body + '\n')
