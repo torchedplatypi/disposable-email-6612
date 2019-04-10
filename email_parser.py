@@ -54,6 +54,7 @@ for csv in filelist:
     post = cwd + slash + training + slash + fn #directory to put each individual set of emails in
     os.mkdir(post)
     #looks like each line is an email
+    linecount = 0
     with open(csv) as file:
         for line in file:
             linecount += 1
