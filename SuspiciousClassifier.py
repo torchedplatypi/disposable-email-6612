@@ -1,5 +1,5 @@
 from ExtractHRefClass import ExractHRef
-from HtmlEvaluator import HtmlEvaluator
+import AnalyzeWeb
 import os, sys
 class SuspiciousClassifier(object):
 
@@ -23,8 +23,7 @@ class SuspiciousClassifier(object):
 		all_urls = self.extractor.get_urls()
 		for k, v in all_urls.items():
 			for url in v:
-				self.htmlevaulator.set_link(url)
-				if self.htmlevaulator.evaluate():
+				if AnalyzeWeb.classifyLink(url):
 					suspicious_emails.append(k)
 					break
 
