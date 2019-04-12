@@ -21,9 +21,9 @@ def classifyLink(str):
     headers = {'Accept-Encoding': 'identity'}
     try:
 
-        r = requests.get(str,headers=headers)
+        r = requests.get(str,headers=headers,allow_redirects=True)
         text = r.text
-        return hasCredential(text)
+        return [hasCredential(text), len(r.history)]
     except:
         return -1
     
