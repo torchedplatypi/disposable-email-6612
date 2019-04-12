@@ -47,10 +47,13 @@ class SuspiciousClassifier(object):
 		body_content = body
 		 
 		# check if cluster matches #
+
 		scs = classify_new.freqPhishingTest(body_content)
 		clust = max(scs.items(), key=operator.itemgetter(1))[0] 
 		print(scs)
 		print(clust)
+
+		clust = max(classify_new.freqPhishingTest(body_content))
 		if clust == "Cluster 1 Score":
 			cluster_val = 1
 		return ((analysis_val << 1) + cluster_val)
