@@ -23,12 +23,11 @@ class ExtractHRef(object):
             # performing keywords scan
             line_data = l.lower()
             words_list = line_data.split(' ')
-            sensitive_information_flag = False
+            sensitive_information_score = 0
             for key_word in sensitive_list:
                 if key_word in words_list: 
-                    sensitive_information_flag = True
-                    break
-            keywordResult.append(sensitive_information_flag)
+                    sensitive_information_score+=1
+            keywordResult.append(sensitive_information_score)
 
             # extracting urls in the email
             out = re.findall(pattern,l)
