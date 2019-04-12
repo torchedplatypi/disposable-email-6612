@@ -1,17 +1,17 @@
 from ExtractHRefClass import ExtractHRef
 import AnalyzeWeb
-import os, sys
+import os, sys, re
 from matplotlib import pyplot as plt
 import classify_new
+import operator
 
 class SuspiciousClassifier(object):
 
-	levels_of_suspicion
-	def __init__(self):
+	def __init__(self, max_emails=100):
 		self.folder = ""
 		self.filename = ""
 		self.extractor = ExtractHRef()
-
+		self.max_emails = max_emails
 	def set_folder(self, f):
 		self.folder = f
 
@@ -25,30 +25,33 @@ class SuspiciousClassifier(object):
 			if AnalyzeWeb.classifyLink(url) == 1:
 				sus_link = 1
 				break
+		print("Sus_link: %s" % sus_link)
 
 		keyword_match = 0
 		if score >= 2:
 			keyword_match = 1
-
+		
+		print("keyword_match %s" % keyword_match)
 		analysis_val = max(keyword_match, sus_link)
 
 		body_content = ""
 		linecount = 0
 		cluster_val = 0
-		with line = raw
-		        #remove excess whitespace
-		        line = re.sub(' +', ' ',line)
-		        #create new file in txt
-		        fnf = holder + num + extension
-		        sentfrom = line.split(';')[0] #grab sender
-		        subjectline = line.split(';')[1]  #grab subject
-		        line = line.replace(sentfrom + ';' ,"")
-		        body = line.replace(subjectline + ';',"") #parse for body content
-		        body_content = body
+		line = raw
+		#remove excess whitespace
+		line = re.sub(' +', ' ',line)
+		sentfrom = line.split(';')[0] #grab sender
+		subjectline = line.split(';')[1]  #grab subject
+		line = line.replace(sentfrom + ';' ,"")
+		body = line.replace(subjectline + ';',"") #parse for body content
+		body_content = body
 		 
 		# check if cluster matches #
-		clust = max(classify_new.freqPhishingTest(body_content))
-		if clust = "Cluster 1 Score":
+		scs = classify_new.freqPhishingTest(body_content)
+		clust = max(scs.items(), key=operator.itemgetter(1))[0] 
+		print(scs)
+		print(clust)
+		if clust == "Cluster 1 Score":
 			cluster_val = 1
 		return ((analysis_val << 1) + cluster_val)
 
@@ -57,17 +60,19 @@ class SuspiciousClassifier(object):
 
 		all_levels = []
 		self.extractor.set_filename(self.filename)
+		self.extractor.prep_data()
 		all_links = self.extractor.get_urls()
 		all_keyword_score = self.extractor.get_keywordsScan()
 		all_raw = self.extractor.get_raw()
-		print(len(all_urls))
+		print(len(all_links))
 		idx = 0
-		for idx in range(len(all_links))
-			cur_l = check_level(all_links[idx], all_keyword_score[idx], all_raw[idx])
+		for idx in range(len(all_links)):
+			cur_l = self.check_level(all_links[idx], all_keyword_score[idx], all_raw[idx])
 			print(cur_l)
 			all_levels.append(cur_l)
-			if idx % 20 == 0:
-				print(idx)
+			print(idx)
+			if idx >= self.max_emails:
+				break
 
 		print("NO Threat Email")
 		print(all_raw[all_levels.index(0b00)])

@@ -2,7 +2,7 @@ import requests
 import csv
 import numpy as np 
 import unicodedata
-keyword = ['password','username','log in', 'sign in'];
+keyword = ['password','username','log in', 'sign in', 'login', 'credit card', 'creditcard', 'ssn', 'social security', 'pin']
 testlink ='http://www.b.com'
 #  Call the calssifyLink() function to get classficataion result 
 #  if return value is 1, it means it contains login,password, sign in information
@@ -12,10 +12,13 @@ testlink ='http://www.b.com'
 def hasCredential(str):
     content = unicodedata.normalize('NFKD', str)
     content = content.lower()
+    matches = 0
     for key in keyword:     # by item
         result = content.find(key)
         if result != -1:
-            return 1
+            matches +=1
+    if matches >= 3:
+        return 1
     return 0
 def classifyLink(str):
     headers = {'Accept-Encoding': 'identity'}
@@ -23,7 +26,7 @@ def classifyLink(str):
 
         r = requests.get(str,headers=headers,allow_redirects=True)
         text = r.text
-        return [hasCredential(text), len(r.history)]
+        return hasCredential(text)
     except:
         return -1
     

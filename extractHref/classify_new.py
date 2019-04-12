@@ -1,4 +1,8 @@
 ### Import and save 'WORD',<VALUE> pairs into dictionaries ###
+freq1 = "/home/nsolomon/CompNetSecProj/guerrilla_data/Cluster_0_Features.txt"
+freq2 = "/home/nsolomon/CompNetSecProj/guerrilla_data/Cluster_1_Features.txt"
+freq3 = "/home/nsolomon/CompNetSecProj/guerrilla_data/Cluster_2_Features.txt"
+
 f1Handle = open(freq1)
 f2Handle = open(freq2)
 f3Handle = open(freq3)
@@ -9,7 +13,7 @@ f1Handle.close()
 f2Handle.close()
 f3Handle.close()
 
-def freqPhishingTest(bodycontent, freq1, freq2, freq3):
+def freqPhishingTest(bodycontent):
 	"Return score of email per cluster"
 
 
@@ -51,10 +55,13 @@ def freqPhishingTest(bodycontent, freq1, freq2, freq3):
 	### Iterate over each word in the message, checking to see if the word
 	### appears in each high-freq table then aggregate values
 	bodyWords = bodycontent.split() #split at each space
-	for x in bodyWords:
-			score1 += data1.get(bodyWords[x])
-			score2 += data2.get(bodyWords[x])
-			score3 += data3.get(bodyWords[x])
+	score1=0
+	score2=0
+	score3=0
+	for x in range(len(bodyWords)):
+			score1 += data1.get(bodyWords[x].lower(),0)
+			score2 += data2.get(bodyWords[x].lower(),0)
+			score3 += data3.get(bodyWords[x].lower(),0)
 
 
 	d = {
