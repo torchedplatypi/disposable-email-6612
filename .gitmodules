@@ -1,0 +1,3 @@
+[submodule "ml-email-clustering"]
+	path = ml-email-clustering
+	url = https://github.com/anthdm/ml-email-clustering
