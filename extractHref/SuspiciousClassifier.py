@@ -7,7 +7,6 @@ class SuspiciousClassifier(object):
 		self.folder = ""
 		self.filename = ""
 		self.extractor = ExtractHRef()
-		self.htmlevaulator = HtmlEvaluator()
 
 	def set_folder(self, f):
 		self.folder = f
