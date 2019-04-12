@@ -1,4 +1,4 @@
-from ExtractHRefClass import ExractHRef
+from ExtractHRefClass import ExtractHRef
 import AnalyzeWeb
 import os, sys
 class SuspiciousClassifier(object):
