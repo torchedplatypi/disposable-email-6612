@@ -9,8 +9,7 @@ Created on Tue Apr  9 21:33:23 2019
 import sys
 import os
 import glob
-import re
-import pandas as pd
+
 #import sklearn.feature_extraction.text
 from sklearn.feature_extraction.text import TfidfVectorizer, ENGLISH_STOP_WORDS
 import matplotlib
@@ -19,7 +18,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
-from PIL import Image
+
+import math
 #this script runs a unsupervised classifier on data
 body = []
 #get the dataset option or help menu
@@ -88,13 +88,28 @@ vect = TfidfVectorizer(stop_words='english',max_df=.5,min_df=2)
 X = vect.fit_transform(body)
 X_dense = X.todense()
 #use PCA to transform the features
-coords = PCA(n_components=2).fit_transform(X_dense)
+bodlen = len(body)
+n = 5000
+cycles = math.ceil(float(len(body)) / n)
+randomdata = np.random.permutation(bodlen)
+body = body[randomdata]
+for i in range(0,int(cycles)):
+    if bodlen < n:
+        temp = PCA(n_components=2).fit_transform(X_dense[i*n:,:])
+    else:
+        temp = PCA(n_components=2).fit_transform(X_dense[i*n:(i+1)*n])
+    bodlen -= n
+    if i == 0:
+        coords = temp
+    else:
+        coords = np.concatenate([coords,temp],axis=0)
+
 #turn off interactive
 plt.ioff()
 #get the top features and output to a text file
 features = vect.get_feature_names()
 row = np.squeeze(X[1].toarray())
-topn_ids = np.argsort(row)[::-1][:10]
+topn_ids = np.argsort(row)[::-1][:25]
 top_features = [(features[i],row[i]) for i in topn_ids]
 outfile = open('testfile1.txt','w')
 outfile.write('features \t\t score\n')
@@ -106,7 +121,7 @@ outfile.close()
 n_clusters = 3
 clf = KMeans(n_clusters=n_clusters, max_iter=100, init='k-means++',n_init=1)
 labels = clf.fit_predict(X)
-label_colors = ['#2AB0E9','#2BAF74','#D7665E']
+label_colors = ['#2AB0E9','#2BAF74','#D7665E', '#CCCCCC']
 colors = [label_colors[i] for i in labels]
 plt.scatter(coords[:,0], coords[:,1],c=colors)
 #output plot as a figure
