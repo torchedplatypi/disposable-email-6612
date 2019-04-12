@@ -9,9 +9,7 @@ Created on Tue Apr  9 21:33:23 2019
 import sys
 import os
 import glob
-
-#import sklearn.feature_extraction.text
-from sklearn.feature_extraction.text import TfidfVectorizer, ENGLISH_STOP_WORDS
+from sklearn.feature_extraction.text import TfidfVectorizer
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -84,48 +82,66 @@ else:
 
 #learning portion of the code 
 #vectorize the email contents
+
 vect = TfidfVectorizer(stop_words='english',max_df=.5,min_df=2)
 X = vect.fit_transform(body)
+
+row,col = X.shape
 X_dense = X.todense()
+r,c = X_dense.shape
 #use PCA to transform the features
-bodlen = len(body)
 n = 5000
-cycles = math.ceil(float(len(body)) / n)
-randomdata = np.random.permutation(bodlen)
-body = body[randomdata]
+cycles = math.ceil(float(r) / n)
 for i in range(0,int(cycles)):
-    if bodlen < n:
+    if r < n:
         temp = PCA(n_components=2).fit_transform(X_dense[i*n:,:])
     else:
-        temp = PCA(n_components=2).fit_transform(X_dense[i*n:(i+1)*n])
-    bodlen -= n
+        temp = PCA(n_components=2).fit_transform(X_dense[i*n:(i+1)*n,:])
+    r -= n
     if i == 0:
-        coords = temp
+        coords = np.array(temp)
     else:
         coords = np.concatenate([coords,temp],axis=0)
 
 #turn off interactive
 plt.ioff()
-#get the top features and output to a text file
+#get the top features of the dataset and output to a text file
 features = vect.get_feature_names()
-row = np.squeeze(X[1].toarray())
-topn_ids = np.argsort(row)[::-1][:25]
-top_features = [(features[i],row[i]) for i in topn_ids]
-outfile = open('testfile1.txt','w')
-outfile.write('features \t\t score\n')
-for index in top_features:
-    outfile.write(str(index))
-    outfile.write('\n')
-outfile.close()
 #cluster based on number of clusters
 n_clusters = 3
 clf = KMeans(n_clusters=n_clusters, max_iter=100, init='k-means++',n_init=1)
 labels = clf.fit_predict(X)
 label_colors = ['#2AB0E9','#2BAF74','#D7665E', '#CCCCCC']
+#cluster0 -> blue
+#cluster1 -> green
+#cluster2 -> red
 colors = [label_colors[i] for i in labels]
+
 plt.scatter(coords[:,0], coords[:,1],c=colors)
 #output plot as a figure
-path = 'test1.png'
+path = 'Clustering_DataSet.png'
 plt.savefig(path,format = 'png')
 plt.close()
+#finding top features per cluster
+
+unilabels = np.unique(labels)
+count = 0
+for label in unilabels:
+    
+    ind = np.where(labels==label)
+    uD = X[ind].toarray()
+    uD[uD < .1] = 0
+    utmeans = np.mean(uD,axis=0)
+    utopn_ids = np.argsort(utmeans)[::-1][:50]
+    clus_feat = [(features[i],utmeans[i]) for i in utopn_ids]
+    strcount = str(count)
+    fnf = 'Cluster_' + strcount + '_Features.txt' 
+    cfile = open(fnf,'w')
+    cfile.write('features \t\t score\n')
+    for feat in clus_feat:
+        cfile.write(str(feat))
+        cfile.write('\n')
+    cfile.close()
+    count += 1
+
 print('Code Execution Finished')
