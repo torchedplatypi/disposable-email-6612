@@ -2,20 +2,32 @@
 freq1 = "/home/nsolomon/CompNetSecProj/guerrilla_data/Cluster_0_Features.txt"
 freq2 = "/home/nsolomon/CompNetSecProj/guerrilla_data/Cluster_1_Features.txt"
 freq3 = "/home/nsolomon/CompNetSecProj/guerrilla_data/Cluster_2_Features.txt"
+import os
+lines1 = None
+lines2 = None
+lines3 = None
 
-f1Handle = open(freq1)
-f2Handle = open(freq2)
-f3Handle = open(freq3)
-lines1 = f1Handle.readlines()
-lines2 = f2Handle.readlines()
-lines3 = f3Handle.readlines()
-f1Handle.close()
-f2Handle.close()
-f3Handle.close()
+def set_freq_data(folder, f1, f2, f3):
+	global lines1, lines2, lines3
+	f1 = os.path.join(folder, f1)
+	f2 = os.path.join(folder, f2)
+	f3 = os.path.join(folder, f3)
+	print(f1)
+	print(f2)
+	print(f3)
+	f1Handle = open(f1)
+	f2Handle = open(f2)
+	f3Handle = open(f3)
+	lines1 = f1Handle.readlines()
+	lines2 = f2Handle.readlines()
+	lines3 = f3Handle.readlines()
+	f1Handle.close()
+	f2Handle.close()
+	f3Handle.close()
 
 def freqPhishingTest(bodycontent):
 	"Return score of email per cluster"
-
+	global lines1, lines2, lines3
 
 	data1 = {}
 	data2 = {}

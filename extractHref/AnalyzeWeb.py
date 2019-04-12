@@ -2,7 +2,7 @@ import requests
 import csv
 import numpy as np 
 import unicodedata
-keyword = ['password','username','log in', 'sign in', 'login', 'credit card', 'creditcard', 'ssn', 'social security', 'pin']
+keyword = ['password','username','log in', 'sign in', 'login', 'credit card', 'creditcard', 'ssn', 'social security', 'pin', 'account number', 'routing number']
 testlink ='http://www.b.com'
 #  Call the calssifyLink() function to get classficataion result 
 #  if return value is 1, it means it contains login,password, sign in information
@@ -17,7 +17,7 @@ def hasCredential(str):
         result = content.find(key)
         if result != -1:
             matches +=1
-    if matches >= 3:
+    if matches >= 4:
         return 1
     return 0
 def classifyLink(str):

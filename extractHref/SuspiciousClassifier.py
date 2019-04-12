@@ -4,19 +4,23 @@ import os, sys, re
 from matplotlib import pyplot as plt
 import classify_new
 import operator
+import numpy as np
 
 class SuspiciousClassifier(object):
 
-	def __init__(self, max_emails=100):
+	def __init__(self, max_emails=100,phishing_cluster=1):
 		self.folder = ""
 		self.filename = ""
 		self.extractor = ExtractHRef()
 		self.max_emails = max_emails
+		self.phish_clust = phishing_cluster
 	def set_folder(self, f):
 		self.folder = f
 
 	def set_filename(self, f):
 		self.filename = f
+	def set_freq_data(self,folder, f1, f2, f3):
+		classify_new.set_freq_data(folder, f1, f2, f3)
 
 	def check_level(self, links, score, raw):
 		# check links for suspicious entries #
@@ -28,7 +32,7 @@ class SuspiciousClassifier(object):
 		print("Sus_link: %s" % sus_link)
 
 		keyword_match = 0
-		if score >= 2:
+		if score >= 3:
 			keyword_match = 1
 		
 		print("keyword_match %s" % keyword_match)
@@ -52,9 +56,10 @@ class SuspiciousClassifier(object):
 		clust = max(scs.items(), key=operator.itemgetter(1))[0] 
 		print(scs)
 		print(clust)
-
-		clust = max(classify_new.freqPhishingTest(body_content))
-		if clust == "Cluster 1 Score":
+		cluster_val = 0
+		print(str(self.phish_clust))
+		print(str(self.phish_clust) in clust)
+		if str(self.phish_clust) in clust:
 			cluster_val = 1
 		return ((analysis_val << 1) + cluster_val)
 
@@ -76,16 +81,17 @@ class SuspiciousClassifier(object):
 			print(idx)
 			if idx >= self.max_emails:
 				break
-
-		print("NO Threat Email")
-		print(all_raw[all_levels.index(0b00)])
-		print("Cluster Match Only")
-		print(all_raw[all_levels.index(0b01)])
-		print("Link/Keyword Match Only")
-		print(all_raw[all_levels.index(0b10)])
-		print("Both Match")
-		print(all_raw[all_levels.index(0b11)])
-
+		try:
+			print("NO Threat Email")
+			print(all_raw[all_levels.index(0b00)])
+			print("Cluster Match Only")
+			print(all_raw[all_levels.index(0b01)])
+			print("Link/Keyword Match Only")
+			print(all_raw[all_levels.index(0b10)])
+			print("Both Match")
+			print(all_raw[all_levels.index(0b11)])
+		except:
+			pass
 		labels = ["NO THREAT", "Cluter Match Only", "Link/Keyword Match Only", "Both Match"]
 		vals = [0b00, 0b01, 0b10, 0b11]
 
@@ -95,6 +101,9 @@ class SuspiciousClassifier(object):
 		ax1.axis('equal')
 
 		plt.savefig("./pie_chart.png")
+		
+		dangerous = [all_raw[i] for i in [i for i, x in enumerate(all_levels) if x == 0b11]]
+		np.savetxt("high_threat_output.csv", dangerous, delimiter=";", fmt='%s')
 
 if __name__ == "__main__":
 	f = "filename"

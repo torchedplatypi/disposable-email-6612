@@ -17,7 +17,7 @@ class ExtractHRef(object):
         lines = fHandle.readlines()
         fHandle.close()
         img_ext = ['.jpg','.gif','.png']
-        sensitive_list=['name', 'address', 'card', 'telephone', 'age']
+        sensitive_list=['name', 'address', 'card', 'telephone', 'age', 'routing number', 'account number', 'bank number', 'bank']
         self.raw_data = lines
         for l in lines:
             # performing keywords scan
