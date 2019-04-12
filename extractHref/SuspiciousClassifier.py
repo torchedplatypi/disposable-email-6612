@@ -35,20 +35,19 @@ class SuspiciousClassifier(object):
 		body_content = ""
 		linecount = 0
 		cluster_val = 0
-		with line = raw
-		        #remove excess whitespace
-		        line = re.sub(' +', ' ',line)
-		        #create new file in txt
-		        fnf = holder + num + extension
-		        sentfrom = line.split(';')[0] #grab sender
-		        subjectline = line.split(';')[1]  #grab subject
-		        line = line.replace(sentfrom + ';' ,"")
-		        body = line.replace(subjectline + ';',"") #parse for body content
-		        body_content = body
+		#remove excess whitespace
+		line = re.sub(' +', ' ',line)
+		#create new file in txt
+		fnf = holder + num + extension
+		sentfrom = line.split(';')[0] #grab sender
+		subjectline = line.split(';')[1]  #grab subject
+		line = line.replace(sentfrom + ';' ,"")
+		body = line.replace(subjectline + ';',"") #parse for body content
+		body_content = body
 		 
 		# check if cluster matches #
 		clust = max(classify_new.freqPhishingTest(body_content))
-		if clust = "Cluster 1 Score":
+		if clust == "Cluster 1 Score":
 			cluster_val = 1
 		return ((analysis_val << 1) + cluster_val)
 
@@ -62,7 +61,7 @@ class SuspiciousClassifier(object):
 		all_raw = self.extractor.get_raw()
 		print(len(all_urls))
 		idx = 0
-		for idx in range(len(all_links))
+		for idx in range(len(all_links)):
 			cur_l = check_level(all_links[idx], all_keyword_score[idx], all_raw[idx])
 			print(cur_l)
 			all_levels.append(cur_l)
