@@ -7,6 +7,7 @@ class SuspiciousClassifier(object):
 		self.folder = ""
 		self.filename = ""
 		self.extractor = ExtractHRef()
+		self.htmlevaulator = HtmlEvaluator()
 
 	def set_folder(self, f):
 		self.folder = f
@@ -20,17 +21,17 @@ class SuspiciousClassifier(object):
 		suspicious_emails = []
 		self.extractor.set_filename(self.filename)
 		all_urls = self.extractor.get_urls()
-             	print(len(all_urls))
-		idx=0
+		print(len(all_urls))
+		idx = 0
 		for links_in_email in all_urls:
 			for url in links_in_email:
 				if AnalyzeWeb.classifyLink(url) == 1:
 					suspicious_emails.append(idx)
-					print("Email #%s is suspicious" % idx)
-                                        break
+					print("Email #%s is sus" % idx)
+					break
+			if idx % 20 == 0:
+				print(idx)
 			idx+=1
-                        if idx % 20 == 0:
-                            print(idx)
 
 		print(suspicious_emails)
 
