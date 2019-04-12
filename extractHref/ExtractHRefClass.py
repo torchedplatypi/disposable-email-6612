@@ -1,11 +1,14 @@
 import re
 
 class ExtractHRef(object):
-    def __init__(self, f):
+    def __init__(self, f=""):
+        self.filename=f
+
+    def set_filename(self, f):
         self.filename=f
 
     def get_urls(self):
-        fHandle = open(filename)
+        fHandle = open(self.filename)
         pattern = r'(http[s]?://[^\s|^\)|^\]]+)'
         output =[]
         lines = fHandle.readlines()

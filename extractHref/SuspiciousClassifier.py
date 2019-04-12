@@ -1,4 +1,4 @@
-from ExtractHRefClass import ExractHRef
+from ExtractHRefClass import ExtractHRef
 import AnalyzeWeb
 import os, sys
 class SuspiciousClassifier(object):
@@ -7,7 +7,6 @@ class SuspiciousClassifier(object):
 		self.folder = ""
 		self.filename = ""
 		self.extractor = ExtractHRef()
-		self.htmlevaulator = HtmlEvaluator()
 
 	def set_folder(self, f):
 		self.folder = f
@@ -21,11 +20,17 @@ class SuspiciousClassifier(object):
 		suspicious_emails = []
 		self.extractor.set_filename(self.filename)
 		all_urls = self.extractor.get_urls()
-		for k, v in all_urls.items():
-			for url in v:
-				if AnalyzeWeb.classifyLink(url):
-					suspicious_emails.append(k)
+		print(len(all_urls))
+		idx = 0
+		for links_in_email in all_urls:
+			for url in links_in_email:
+				if AnalyzeWeb.classifyLink(url) == 1:
+					suspicious_emails.append(idx)
+					print("Email #%s is sus" % idx)
 					break
+			if idx % 20 == 0:
+				print(idx)
+			idx+=1
 
 		print(suspicious_emails)
 
