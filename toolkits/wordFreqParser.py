@@ -1,4 +1,3 @@
-import json
 filename ="testfile1.txt"
 fHandle = open(filename)
 lines = fHandle.readlines()
