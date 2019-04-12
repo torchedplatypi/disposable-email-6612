@@ -53,14 +53,12 @@ def freqPhishingTest(bodycontent, freq1, freq2, freq3):
 			score1 += data1.get(bodyWords[x])
 			score2 += data2.get(bodyWords[x])
 			score3 += data3.get(bodyWords[x])
-			score4 += data4.get(bodyWords[x])
 
 
 	d = {
 			"Cluster 1 Score" : score1,
 			 "Cluster 2 Score" : score2,
-			 "Cluster 3 Score" : score3, 
-			 "Cluster 4 Score" : score4
+			 "Cluster 3 Score" : score3
 			}
 
 	return d
