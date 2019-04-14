@@ -4,8 +4,7 @@ sudo python3
 import SuspiciousClassifier
 x = SuspiciousClassifier.SuspiciousClassifier(Max_Emails_To_Read, Cluster_That_Is_Phishing (1, 2, 3))
 x.set_filename(path to email files)
-x.set_freq_data(folder containing frequency data, name of cluster 0 freq.txt, name of clustser 1.txt, name of cluster 2.
-txt)
+x.set_freq_data(folder containing frequency data, [list of frequency files (e.g. "clust1.txt", "clust2.txt")])
 x.read_file()
 This will output two files:
         A pie chart with a breakdown of the classification
