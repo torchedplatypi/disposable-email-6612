@@ -19,8 +19,8 @@ class SuspiciousClassifier(object):
 
 	def set_filename(self, f):
 		self.filename = f
-	def set_freq_data(self,folder, f1, f2, f3):
-		classify_new.set_freq_data(folder, f1, f2, f3)
+	def set_freq_data(self,folder, fs):
+		classify_new.set_freq_data(folder, fs)
 
 	def check_level(self, links, score, raw):
 		# check links for suspicious entries #
