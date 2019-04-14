@@ -11,7 +11,7 @@ class ExtractHRef(object):
     def prep_data(self):
         self.data_preped = True
         fHandle = open(self.filename)
-        pattern = r'(http[s]?://[^\s|^\)|^\]]+)'
+        pattern = r'(http[s]?://[^\s\)\]\"]+)'
         urlListAll =[]
         keywordResult=[]
         lines = fHandle.readlines()
@@ -34,8 +34,6 @@ class ExtractHRef(object):
             urlList = []
             # urList contains the list of urls in one particular email message body
             for url in out:
-                # get rid of the parenthesis surrounding the urls
-                url.strip("\"")
                 # get rid of the </a></div> ending in some of the urls
                 url = re.sub('\</div>$', '', url)
                 url = re.sub('\</a>$', '', url)
