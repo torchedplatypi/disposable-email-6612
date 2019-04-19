@@ -5,12 +5,18 @@ Note that many of these commands include writing files, so sudo may be necessary
 This projected is disigned to be run with python3. To set up the environment for the project, you will first need to have python3 and pip3 installed in the VM. The usage of virtualenv is strongly recommended. 
 #### Run: 
 pip3 install virtualenv
+
 virtualenv disposable_email_env
+
 source disposable_email_env/bin/activate
+
 These steps above will create a new virtualenv named disposable_email_env and will set up the python enviroment accordingly. 
+
 #### Run:
 pip install -r requirements
+
 This step installs all the necessary packages and dependencies in the virtual environment
+
 # Part 1: Crawling and Parsing
 We created crawlers for both guerrillamail and mailinator. This will walk you through how to handle crawling and parsing for mailinator,
 but guerrilla mail is very similar.
