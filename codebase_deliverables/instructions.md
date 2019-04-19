@@ -1,7 +1,16 @@
 This read me will guide you all of the code created for this project.
 
 Note that many of these commands include writing files, so sudo may be necessary.
-
+# Part 0: Setting up the Environment
+This projected is disigned to be run with python3. To set up the environment for the project, you will first need to have python3 and pip3 installed in the VM. The usage of virtualenv is strongly recommended. 
+#### Run: 
+pip3 install virtualenv
+virtualenv disposable_email_env
+source disposable_email_env/bin/activate
+These steps above will create a new virtualenv named disposable_email_env and will set up the python enviroment accordingly. 
+#### Run:
+pip install -r requirements
+This step installs all the necessary packages and dependencies in the virtual environment
 # Part 1: Crawling and Parsing
 We created crawlers for both guerrillamail and mailinator. This will walk you through how to handle crawling and parsing for mailinator,
 but guerrilla mail is very similar.
@@ -13,7 +22,7 @@ python main_mailinator.py t
 
 The argument t specifies that you do not want html in your data, which is how we went about the project.
 
-This will load emails from this day, and place their data in a csv in a folder under mailinator_data. (Occasionally this step fails because of bad data loaded into the mailinator API but it almost always runs.)
+This will load emails from this day, and place their data in a csv in a folder under mailinator_data. **(Occasionally this step fails because of bad data loaded into the mailinator API but it almost always runs.)**
 
 If you look in the mailinator_data folder you should see a file with today's date and csv extension that has the data loaded from mailinator. Repeating the above command will add to this csv file (until the date changes and a new csv is made).
 
