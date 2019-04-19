@@ -106,12 +106,13 @@ class SuspiciousClassifier(object):
 		np.savetxt("high_threat_output.csv", dangerous, delimiter=";", fmt='%s')
 
 if __name__ == "__main__":
-	f = "filename"
+	
+	x = SuspiciousClassifier(28, 3)
 	if len(sys.argv) > 1:
-		f = sys.argv[1]
-	sc = SuspiciousClassifier()
-	sc.set_filename(f)
-	sc.read_file()
+		filename = sys.argv[1]
+	x.set_filename("../../data/mailinator_data/4-5-2019.csv")
+	x.set_freq_data("../../data", ["Cluster_0_Features.txt", "Cluster_1_Features.txt", "Cluster_2_Features.txt", "Cluster_3_Features.txt"])
+	x.read_file()
 
 
 
