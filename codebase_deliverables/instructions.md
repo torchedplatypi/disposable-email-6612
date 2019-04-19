@@ -1,5 +1,7 @@
 This read me will guide you all of the code created for this project.
 
+Note that many of these commands include writing files, so sudo may be necessary.
+
 # Part 1: Crawling and Parsing
 We created crawlers for both guerrillamail and mailinator. This will walk you through how to handle crawling and parsing for mailinator,
 but guerrilla mail is very similar.
