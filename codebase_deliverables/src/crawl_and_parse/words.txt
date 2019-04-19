@@ -1,0 +1,10 @@
+james
+john
+robert
+michael
+matt
+spam
+password
+mail
+email
+mailinator
