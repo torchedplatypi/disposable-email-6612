@@ -13,7 +13,7 @@ source disposable_email_env/bin/activate
 These steps above will create a new virtualenv named disposable_email_env and will set up the python enviroment accordingly. 
 
 #### Run:
-pip install -r requirements
+pip install -r requirements.txt
 
 This step installs all the necessary packages and dependencies in the virtual environment
 
