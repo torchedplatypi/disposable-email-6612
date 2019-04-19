@@ -12,9 +12,9 @@ class Mailman(object):
 
     def __init__(self, addr = "john", random_name = False, no_html=True):
         if no_html:
-            self.data_folder = self.directory + "//mailinator_data"
+            self.data_folder = self.directory + "/training_data/mailinator_data"
         else:
-            self.data_folder = self.directory + "//mailinator_data_with_html"
+            self.data_folder = self.directory + "/training_data/mailinator_data_with_html"
         self.addr = ""
         self.no_html = no_html
         self.inbox = wrapper.Inbox(self.api_key)
