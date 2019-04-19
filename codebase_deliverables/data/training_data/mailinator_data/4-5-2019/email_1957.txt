@@ -1,0 +1,4 @@
+b'notify@resideadmissions.com'
+b'Important Notification Regarding Your Admission Application to Acme'
+![](https://s3.us- east-2.amazonaws.com/com.resideadmissions.email.assets/reside-logo.png) Dear Jedna Dva Please log into Reside to complete your Admission ASAP. The Admission period concludes in 24 hours. Please login into your Acme's Reside Admission by clicking on this [link](https://staging.resideadmissions.com/admission/resume). Thank you, Acme 222-333-4444 ![](https://s3.us- east-2.amazonaws.com/com.resideadmissions.email.assets/reside-image.png) Please do not reply to this email, as email replies are not monitored. 
+

@@ -1,0 +1,4 @@
+devxwebmaster@teradata.com
+Account details for john@mailinator.com at Teradata Downloads
+john@mailinator.com, Thank you for registering at Teradata Downloads. You may login by clicking on this link or copying and pasting it in your browser: http://downloads.teradata.com/user/reset/848891/1555630992/_REuxuaAispkZQx7CyhgeqBB6B9SiLS1V62Ol4rsVZE This is a one-time login, so it can be used only once. After logging in, you will be redirected to https://downloads.teradata.com/user/848891/edit so you can change your password. Once you have set your own password, you will be able to log in to http://downloads.teradata.com/user in the future using: username: john@mailinator.com \-- Teradata Downloads team 
+

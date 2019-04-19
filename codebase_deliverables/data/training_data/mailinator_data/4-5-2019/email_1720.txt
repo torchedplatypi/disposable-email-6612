@@ -1,0 +1,4 @@
+b'no-reply@relayr.io'
+b'Aktuelles Ereignis'
+Betreff: N/A Zeit: 2019-04-05T10:07:04.306Z Status: -Anlagenummer: shopping_center_4 -Adresse: Uniwersytecka 21, 44-100 Katowice 
+

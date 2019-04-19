@@ -1,0 +1,4 @@
+b'noreply@devv2.bizzlms.com'
+b'Webcasting available'
+Supervisor Webcasting, 05-04-2019, 05-04-2019, Testing, N/A, , [enroluser_fullname], [enroluser_email] 
+

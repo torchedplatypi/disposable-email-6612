@@ -1,0 +1,4 @@
+b'noreply@devv2.bizzlms.com'
+b'Classroom Hold global'
+Manager body Classroom name : Visible access, Classroom course : Finance System., Classroom startdate : 06-03-2019, Classroom enddate : 09-03-2019, Classroom creator : Jacob C, ' Classroom Department : HR, Classroom session info : Name | Date | Type | Room | Status | Trainer ---|---|---|---|---|--- Session1 | 2019-03-06 11:22:00 to 2019-03-06 18:00:00 | Classroom | N/A | Pending | Session2 | 2019-03-07 09:00:00 to 2019-03-07 18:00:00 | Classroom | N/A | Pending | Session3 | 2019-03-08 09:00:00 to 2019-03-08 18:00:00 | Classroom | N/A | Pending | Session4 | 2019-03-09 09:00:00 to 2019-03-09 11:22:00 | Classroom | N/A | Pending | , User fullname : Sumit Kumar, Classroom link : , Email : sumit@mailinator.com, 
+

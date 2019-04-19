@@ -1,0 +1,4 @@
+b'no-reply@relayr.io'
+b'Aktuelles Ereignis'
+Ereigniss: lift_cabin_lighting_low Betreff: N/A Zeit: 2019-04-05T10:37:06.906Z Status: -Anlagenummer: KTW_QA_EMULATOR_LIFT-406 -Adresse: Am Linder Kreuz, 51147 N/A 
+

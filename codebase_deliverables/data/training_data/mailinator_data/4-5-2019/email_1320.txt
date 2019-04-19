@@ -1,0 +1,4 @@
+b'noreply@devv2.bizzlms.com'
+b'String Identifiers available'
+String Identifiers available String Identifiers, 02-04-2019, 14-04-2019, Development, N/A, , [enroluser_fullname], [enroluser_email] 
+

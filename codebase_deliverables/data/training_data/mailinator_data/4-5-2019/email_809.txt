@@ -1,0 +1,4 @@
+b'george.craciun@mtpo.ro'
+b'Email Junk'
+New message from web FROM: george.craciun@mtpo.ro NAME: COMMENTS: 
+

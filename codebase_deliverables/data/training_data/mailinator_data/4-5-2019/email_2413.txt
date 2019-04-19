@@ -1,0 +1,4 @@
+b'no-reply@relayr.io'
+b'Aktuelles Ereignis'
+Betreff: Hello Zeit: 2019-04-05T15:10:24.417Z Status: -Anlagenummer: LG- MU02-003 -Adresse: Ebersstraße, 10827 Berlin 
+

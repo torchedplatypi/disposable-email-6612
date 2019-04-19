@@ -1,0 +1,4 @@
+b'noreply@devv2.bizzlms.com'
+b'Classroom Hold global'
+Manager body Classroom name : Approvals Section, Classroom course : Finance System., Classroom startdate : 16-03-2019, Classroom enddate : 19-03-2019, Classroom creator : Jacob C, ' Classroom Department : HR, Classroom session info : Name | Date | Type | Room | Status | Trainer ---|---|---|---|---|--- Session1 | 2019-03-16 11:50:00 to 2019-03-16 18:00:00 | Classroom | N/A | Pending | Session2 | 2019-03-17 09:00:00 to 2019-03-17 18:00:00 | Classroom | N/A | Pending | Session3 | 2019-03-18 09:00:00 to 2019-03-18 18:00:00 | Classroom | N/A | Pending | Session4 | 2019-03-19 09:00:00 to 2019-03-19 11:50:00 | Classroom | N/A | Pending | , User fullname : Sumit Kumar, Classroom link : , Email : sumit@mailinator.com, 
+

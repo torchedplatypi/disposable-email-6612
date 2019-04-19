@@ -1,0 +1,4 @@
+b'no-reply@relayr.io'
+b'Aktuelles Ereignis'
+Betreff: N/A Zeit: 2019-04-05T11:08:03.945Z Status: -Anlagenummer: New 1st Test Device -Adresse: Briesingstraße, 12307 Berlin 
+

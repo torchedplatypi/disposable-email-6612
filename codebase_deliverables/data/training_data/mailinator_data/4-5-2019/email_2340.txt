@@ -1,0 +1,4 @@
+b'james1234567879@gmail.com'
+b'New Booking request Notification #128'
+| | ![](https://skybookings.pehoy.com/favicon.png) --- | **Dear John,** --- You have a new booking with us **Booking ID: 128** Customer Details: Dev One (devcustone@mailinator.com | 9999999999) Booked Services: Haircut (Kz65) Total Amount: Kz65.00 Booked For: 06/04/2019 - 09:00 AM to 09:30 AM (30 minutes) Booking Status: REQUESTED Resource: Stacy Williams (resource@gmail.com | 61447448574) To approve or reject this booking please click [here](http://skybookings.pehoy.com//admin/bookings/dailyBookings). Thank you for using Skybookings! This is an auto generated email. please do not reply to it. If you have any queries please email to [support@skybookings.com.au](mailto:support@skybookings.com.au) --- 
+

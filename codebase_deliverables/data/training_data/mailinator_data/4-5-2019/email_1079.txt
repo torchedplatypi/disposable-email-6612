@@ -1,0 +1,4 @@
+b'noreply@devv2.bizzlms.com'
+b'Human resourec available'
+Human resourec available Human resourec, N/A, N/A, HR, N/A, , [enroluser_fullname], [enroluser_email] 
+

@@ -1,0 +1,4 @@
+b'support@lakepharma.com'
+b'CLIENT NOTE Update for #D5845-760 [ddd] '
+" | --- | | | ![LAKEPHARMA](http://10.10.10.31/master/public/img/logo1.png) --- CLIENT NOTE Hello James Watson, A new note has been posted for your project, [#D5845-760](http://10.10.10.31/master/public/permalink/MTFrekI0V3VmTlhoYlB1ZytVbXp1UT09) [ddd] . **Description** : test check2 **Posted by** : Parm Client parmanandsharmaa3@yopmail.com **The following clients were notified of this post:** C-9007090(Friends,A3 """"fdfsfh) **You can view your project at this link:** --- [ View Record ](http://10.10.10.31/master/public/permalink/MTFrekI0V3VmTlhoYlB1ZytVbXp1UT09) --- Thanks, Team DPM. --- | | "
+

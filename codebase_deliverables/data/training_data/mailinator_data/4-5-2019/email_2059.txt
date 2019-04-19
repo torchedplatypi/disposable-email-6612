@@ -1,0 +1,4 @@
+b'ags-polaris-reskinning@allianceglobalservices.com'
+b'Activity ID: 2019-0837 Polaris \xe2\x80\x93 Additional Activity Information Needed'
+Dear Submitter1 Submitter1, Additional information is required for the request below. Activity Id: 2019-0837 Activity Name: Fee Test Activity Type: Fee for Service/ Consulting Arrangements Activity Start date: 20-Mar-2019 Additional Information Needed: ActivityInformation-State Please update the necessary information and resubmit the request. Do not create a new activity request. Simply update the existing activity request. Please do not reply to this email as this message will be undeliverable. [Polaris](https://ssodev.bd.com/idp/startSSO.ping?PartnerSpId=PolarisHIPSSOTest) 
+

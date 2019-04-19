@@ -1,0 +1,4 @@
+b'noreply@devv2.bizzlms.com'
+b'Classroom enrollment Boundary Analysis'
+**Manager Body** Classroom name : Boundary Analysis, Classroom course : ., Classroom startdate : 05-03-2019, Classroom enddate : 07-03-2019, Classroom creator : Jacob C, ' Classroom Department : , Classroom session info : Name | Date | Type | Room | Status | Trainer ---|---|---|---|---|--- Session1 | 2019-03-05 10:05:00 to 2019-03-05 18:00:00 | Classroom | N/A | Pending | Session2 | 2019-03-06 09:00:00 to 2019-03-06 18:00:00 | Classroom | N/A | Pending | Session3 | 2019-03-07 09:00:00 to 2019-03-07 10:05:00 | Classroom | N/A | Pending | , User fullname : Sumit Kumar, Classroom link : , Email : sumit@mailinator.com, Location fullname : N/A, Location address : N/A, Description :, Image ![Boundary Analysis](0) 
+

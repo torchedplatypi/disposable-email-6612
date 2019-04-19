@@ -1,0 +1,4 @@
+b'noreply@devv2.bizzlms.com'
+b'Completions system available'
+Supervisor Completions system, 02-04-2019, 18-04-2019, Testing, Completion system of course, , [enroluser_fullname], [enroluser_email] 
+

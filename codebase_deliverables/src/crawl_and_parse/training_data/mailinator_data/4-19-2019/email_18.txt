@@ -1,0 +1,4 @@
+no-reply@blueskyex.com
+[Blue Sky Exchange] Your username and password info
+Username: John@mailinator.com To set your password, visit the following address: http://localhost/blue-sky-exchange-spencer/wp-login.php 
+

@@ -1,0 +1,4 @@
+b'no-reply@relayr.io'
+b'Aktuelles Ereignis'
+Ereigniss: lift_power_outage Betreff: N/A Zeit: 2019-04-05T09:50:27.169Z Status: -Anlagenummer: LOCUST_KTW_QA_TEST_DEVICE_374265 -Adresse: Robert- Fürbringer-Straße, N/A Gera 
+

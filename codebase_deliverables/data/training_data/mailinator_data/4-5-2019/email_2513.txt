@@ -1,0 +1,4 @@
+b'daily@livesudoku.com'
+b'The daily Sudoku challenge'
+"Hello Abcdefghi, Today's challenges include: Beginners Sudoku #448869: Beginners Sudoku #426231: Medium Sudoku #793472: Medium Sudoku #905387: Hard Sudoku #1311871: Wicked Sudoku #1973965: Enjoy! \------------ This email was sent by LiveSudoku.com To unsubscribe from the daily email, please click the following link: [https://www.livesudoku.com/unsub.php?lang=en&u;=VRMTE4MzE1NDE3NA====&p;=phx](https://www.livesudoku.com/unsub.php?lang=en&u=VRMTE4MzE1NDE3NA====&p=phx) "
+
