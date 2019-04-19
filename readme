@@ -1,3 +1,6 @@
+How to run each part of the code individually. Not the instructions for the full project. Look at instructions.md for full instructions.
+
+
 How to run Suspicious classifier
 cd extractHRef
 sudo python3

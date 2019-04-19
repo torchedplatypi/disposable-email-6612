@@ -51,21 +51,10 @@ This will script will create k output files that list the features and their sco
 This section will show you how to take a csv file of emails and determine which our whole classifier believes to be phishing. Previous parts are not required as we have already created the necessary files and stored them in data. Start by changing into the src/suspicious_classifier folder.
 
 #### Run:
-python (this will enter you into the python command line)
-
-import SuspiciousClassifier
-
-x = SuspiciousClassifier.SuspiciousClassifier(28, 3)
-
-x.set_filename("../../data/mailinator_data/4-5-2019.csv")
-
-x.set_freq_data("../../data", ["Cluster_0_Features.txt", "Cluster_1_Features.txt", "Cluster_2_Features.txt", "Cluster_3_Features.txt"])
-
-x.read_file()
-
+ python SuspiciousClassifier.py
+ 
 This will do the following:
-1) import the suspicious classifier module
-2) create an instance of the suspicious classifier where the max amount of emails to parse is 100 and cluster #2 (Cluster_1_Features.txt) has been determined to be the phishing cluster.
+2) create an instance of the suspicious classifier where the max amount of emails to parse is 28 and cluster #3 (Cluster_3_Features.txt) has been determined to be the phishing cluster.
 3) set the path to the cluster feature information
 4) begin running
 
